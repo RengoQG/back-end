@@ -213,6 +213,7 @@ def detalle_ruta_2(request, ruta_id):
 
         # Supongamos que deseas devolver detalles específicos de la ruta en formato JSON,
         # junto con la lista de paradas asociadas.
+        
         ruta_data = {
             'id': ruta.id,
             'nombre': ruta.nombre,
