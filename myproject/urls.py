@@ -43,6 +43,7 @@ urlpatterns = [
     ##microservicio###
     path('api/obtener_proxima_ruta/<int:paradero_id>/', views.obtener_proxima_ruta, name='obtener_proxima_ruta'),
     ####
+    
     path('pasajeros/', views.pasajerosPa, name="pasajeros"),
     path('rutasPa/', views.listar_rutas_pa, name='listar_rutas_pa'),
     path('rutas/', views.listar_rutas, name='listar_rutas'),
