@@ -93,12 +93,15 @@ DATABASES = {
     }
 }
 
+<<<<<<< HEAD
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',  # Mantén este backend de Django
     'Sistema.backends.CustomUserBackend',  # Agrega tu backend personalizado
 ]
 
 #AUTH_USER_MODEL = 'Sistema.CustomUser'
+=======
+>>>>>>> e4a01bdea91c69e679961b4cf8a11597b0e8ac04
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

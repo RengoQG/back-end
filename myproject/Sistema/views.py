@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
@@ -5,6 +6,18 @@ from .models import CustomUser, RutaDeAutobus
 from django.contrib.auth import login
 from django.contrib.auth import login
 
+=======
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetConfirmView
+from django.shortcuts import render, redirect
+from .forms import CustomUserCreationForm
+from .models import CustomUser, RutaDeAutobus
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import permission_required
+>>>>>>> e4a01bdea91c69e679961b4cf8a11597b0e8ac04
 from .models import Ciudad 
 from .models import AsociacionParadaRuta
 # Asegúrate de importar tu modelo de Ciudad
@@ -14,11 +27,18 @@ from rest_framework.decorators import permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view
 from rest_framework import status
+<<<<<<< HEAD
 from .models import ParadaDeAutobus
+=======
+from django.http import HttpResponseRedirect
+from .models import ParadaDeAutobus
+from django.contrib.auth.decorators import permission_required
+>>>>>>> e4a01bdea91c69e679961b4cf8a11597b0e8ac04
 from django.shortcuts import get_object_or_404, render
 from django.contrib import messages
 from .models import RutaDeAutobus  # Asegúrate de importar tu modelo de ruta
 from django.views.decorators.csrf import csrf_exempt
+<<<<<<< HEAD
 from rest_framework.response import Response
 
 
@@ -229,6 +249,13 @@ def inicioSesion(request):
     return render(request, 'Sistema/login.html')
 
 #Interfaz de usuario
+=======
+
+
+def inicioSesion(request):
+    return render(request, 'Sistema/login.html')
+
+>>>>>>> e4a01bdea91c69e679961b4cf8a11597b0e8ac04
 def custom_login(request):
     error_message = None
 
@@ -256,8 +283,11 @@ def custom_login(request):
 
     return render(request, 'Sistema/login.html', {'error_message': error_message})
 
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> e4a01bdea91c69e679961b4cf8a11597b0e8ac04
 def register(request):
     error_message = None
     success_message = None
@@ -357,9 +387,12 @@ def consultar_paradas_en_ruta(request, route_id):
     
     return render(request, 'Sistema/consulta_paradas.html', {'paradas': paradas})
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> e4a01bdea91c69e679961b4cf8a11597b0e8ac04
 def consultar_rutas_de_autobus(request):
     rutas = RutaDeAutobus.objects.all()
     rutas_data = []

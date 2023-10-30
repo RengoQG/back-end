@@ -81,6 +81,20 @@ class CustomUserCreationForm(UserCreationForm):
         fields = UserCreationForm.Meta.fields + ('nombre', 'rol')
 
 
+<<<<<<< HEAD
+=======
+def consultar_paradas(request):
+    paradas = ParadaDeAutobus.objects.all()
+
+    if request.method == 'POST':
+        route_id = request.POST.get('routeId')
+        response = requests.get(f'https://tuapi.com/api/routes/{route_id}/stops/')
+        paradas_en_ruta = response.json()
+    else:
+        paradas_en_ruta = []
+
+    return render(request, 'consulta_paradas.html', {'paradas': paradas, 'paradas_en_ruta': paradas_en_ruta})
+>>>>>>> e4a01bdea91c69e679961b4cf8a11597b0e8ac04
 
 # Crear grupos (continuar usando esta parte)
 #user_group, created = Group.objects.get_or_create(name='pasajero')
